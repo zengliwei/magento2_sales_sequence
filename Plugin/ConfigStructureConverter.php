@@ -59,7 +59,7 @@ class ConfigStructureConverter
             $group['id'] = $entityType;
             $group['label'] .= $entityType;
             foreach ($group['children'] as &$field) {
-                $field['path'] = 'sales/sequence/' . $entityType;
+                $field['path'] = 'sales/' . $entityType . '_sequence';
             }
             $result['config']['system']['sections']['sales']['children']['sequence']['children'][$entityType] = $group;
         }

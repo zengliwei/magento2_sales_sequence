@@ -78,11 +78,22 @@ class UpdateSalesSequenceSettings implements ObserverInterface
             $data = [];
             foreach ($fields as $field) {
                 $value = $this->config->getValue(
-                    'sales/sequence/' . $entityType . '/' . $field,
+                    'sales/' . $entityType . '_sequence/' . $field,
                     $scope,
                     $storeId
                 );
-                if (!empty($value)) {
+                if (empty($value)) {
+                    switch ($field) {
+                        case 'prefix':
+                        case 'suffix':
+                            $data[$field] = null;
+                            break;
+
+                        case 'is_active':
+                            $data[$field] = $value;
+                            break;
+                    }
+                } else {
                     $data[$field] = $value;
                 }
             }
