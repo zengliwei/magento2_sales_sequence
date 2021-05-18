@@ -23,7 +23,7 @@
                    showInDefault="1" showInWebsite="0" showInStore="1">
                 <label>Sequence</label>
                 <group id="template" translate="label" type="text" sortOrder="10"
-                       showInDefault="1" showInWebsite="0" showInStore="1">
+                       showInDefault="0" showInWebsite="0" showInStore="1">
                     <label>Configuration options for: </label>
                     <field id="prefix" translate="label" type="text" sortOrder="10"
                            showInDefault="1" showInWebsite="0" showInStore="1" canRestore="0">
